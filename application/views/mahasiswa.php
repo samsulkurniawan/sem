@@ -6,6 +6,7 @@
 
 <body>
     <legend>Data Mahasiswa</legend>
+    <a  href="<?= base_url('index.php/mahasiswa/insert'); ?>">Tambah Mahasiswa</a>
     <table width="40%" border="1">
         <thead>
             <tr>

@@ -18,4 +18,27 @@ class mahasiswa extends CI_Controller
         $this->load->view('mahasiswa', $data);
     }
 
+    function insert(){
+        $data['mahasiswa'] = $this->m_mahasiswa->tampilData()->result();
+        $this->load->view('insert', $data);
+    }
+
+    function insertData(){
+		$nim = $this->input->post('nim');
+		$nama = $this->input->post('nama');
+		$jurusan = $this->input->post('jurusan');
+        $alamat = $this->input->post('alamat');
+ 
+		$data = array(
+			'nim' => $nim,
+			'nama' => $nama,
+			'jurusan' => $jurusan,
+            'alamat' => $alamat
+			);
+		$this->m_mahasiswa->input_data($data,'mahasiswa');
+		redirect('http://localhost/MyCi/index.php/mahasiswa');
+	}
+ 
+
+
 }
